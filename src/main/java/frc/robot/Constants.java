@@ -6,7 +6,40 @@ package frc.robot;
 
 /** Add your docs here. */
 public class Constants {
+    /*
+     * CAN ID Mappings
+     */
     public static final int ELEVATOR = 15;
     public static final int TRIGGER = 16;
     public static final int SOLENOID = 20;
+
+    // Swerve Drive CAN IDs
+    public static final int FRONT_LEFT_ANGLEMOTOR = 1;
+    public static final int FRONT_LEFT_DRIVEMOTOR = 2;
+    public static final int FRONT_LEFT_ABSOLUTE_ENCODER = 3;
+    public static final int FRONT_LEFT_ABSOLUTE_ANGLE_OFFSET = 9999;
+
+    public static final int FRONT_RIGHT_ANGLEMOTOR = 4;
+    public static final int FRONT_RIGHT_DRIVEMOTOR = 5;
+    public static final int FRONT_RIGHT_ABSOLUTE_ENCODER = 6;
+    public static final int FRONT_RIGHT_ABSOLUTE_ANGLE_OFFSET = 9999;
+    
+    public static final int BACK_LEFT_ANGLEMOTOR = 7;
+    public static final int BACK_LEFT_DRIVEMOTOR = 8;
+    public static final int BACK_LEFT_ABSOLUTE_ENCODER = 9;
+    public static final int BACK_LEFT_ABSOLUTE_ANGLE_OFFSET = 9999;
+
+    public static final int BACK_RIGHT_ANGLEMOTOR = 10;
+    public static final int BACK_RIGHT_DRIVEMOTOR = 11;
+    public static final int BACK_RIGHT_ABSOLUTE_ENCODER = 12;
+    public static final int BACK_RIGHT_ABSOLUTE_ANGLE_OFFSET = 9999;
+
+    public static final int PIGEON_2 = 13;
+
+    /*
+     * Elevator Constants
+     */
+    public static final double SPEED_UP = 1.0;
+    public static final double SPEED_DOWN = -1.0;
+    public static final double ELEVATOR_STOP = 0.0;
 }
