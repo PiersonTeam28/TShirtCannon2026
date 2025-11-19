@@ -4,11 +4,22 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class ElevatorUtil extends SubsystemBase {
   /** Creates a new ElevatorUtil. */
-  public ElevatorUtil() {}
+
+  private TalonSRX elevator;
+  
+  public ElevatorUtil() {
+    elevator = new TalonSRX(Constants.ELEVATOR);
+
+
+  }
 
   @Override
   public void periodic() {
