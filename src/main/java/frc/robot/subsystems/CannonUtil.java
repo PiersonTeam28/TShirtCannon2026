@@ -12,12 +12,12 @@ import frc.robot.Constants;
 
 public class CannonUtil extends SubsystemBase {
   /** Creates a new CannonUtil. */
-  private TalonSRX solenoid;
-  private TalonSRX trigger;
+  private TalonSRX shooter;
+  private TalonSRX loader;
 
   public CannonUtil() {
-    solenoid = new TalonSRX(Constants.SOLENOID);    // yankees suck
-    trigger = new TalonSRX(Constants.TRIGGER);
+    shooter = new TalonSRX(Constants.SHOOTER);    // changed names
+    loader = new TalonSRX(Constants.LOADER);
   }
 
   @Override
