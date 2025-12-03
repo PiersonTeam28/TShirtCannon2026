@@ -5,4 +5,8 @@
 package frc.robot;
 
 /** Add your docs here. */
-public class Constants {}
+public class Constants {
+    public static final int ELEVATOR = 15;
+    public static final int TRIGGER = 16;
+    public static final int SOLENOID = 20;
+}

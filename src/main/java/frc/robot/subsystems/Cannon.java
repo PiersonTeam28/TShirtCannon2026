@@ -18,7 +18,7 @@ public class Cannon extends SubsystemBase {
     private boolean loaded = false;
 
     public Cannon() {
-        solenoid = new TalonSRX(20);
+        solenoid = new TalonSRX(20);    // yankees suck
         trigger = new TalonSRX(16);
         elevator = new TalonSRX(15);
     }

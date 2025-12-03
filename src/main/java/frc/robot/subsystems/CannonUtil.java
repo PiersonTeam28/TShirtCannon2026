@@ -4,11 +4,21 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class CannonUtil extends SubsystemBase {
   /** Creates a new CannonUtil. */
-  public CannonUtil() {}
+  private TalonSRX solenoid;
+  private TalonSRX trigger;
+
+  public CannonUtil() {
+    solenoid = new TalonSRX(Constants.SOLENOID);    // yankees suck
+    trigger = new TalonSRX(Constants.TRIGGER);
+  }
 
   @Override
   public void periodic() {
