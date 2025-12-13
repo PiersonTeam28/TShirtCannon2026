@@ -6,6 +6,20 @@ package frc.robot;
 
 /** Add your docs here. */
 public class Constants {
+
+    public enum ElevatorAngle {
+        UP,
+        DOWN,
+        STOP
+      }
+
+    public enum CannonState {
+        SHOOT,
+        LOAD_SHORT,
+        LOAD_LONG,
+        DEFAULT
+    }
+
     /*
      * CAN ID Mappings
      */
@@ -41,7 +55,16 @@ public class Constants {
     /*
      * Elevator Constants
      */
-    public static final double SPEED_UP = 1.0;
-    public static final double SPEED_DOWN = -1.0;
-    public static final double ELEVATOR_STOP = 0.0;
+    public static final double ANGLE_UP = 1.0;
+    public static final double ANGLE_DOWN = -1.0;
+    public static final double ANGLE_STOP = 0.0;
+
+    /*
+     * Cannon Constants
+     */
+    public static final double WAIT_SHORT = 0.5;
+    public static final double WAIT_LONG = 1.0;
+    public static final double CANNON_SHOOT = 1.0;
+    public static final double CANNON_LOAD = 1.0;
+    public static final double CANNON_DEFAULT = 0.0;
 }

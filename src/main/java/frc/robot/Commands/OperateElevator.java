@@ -5,16 +5,20 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+
+import frc.robot.Constants;
 import frc.robot.subsystems.ElevatorUtil;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class OperateElevator extends Command {
   /** Creates a new OperateElevator. */
   private final ElevatorUtil m_elevator;
+  private Constants.ElevatorAngle angle;
 
-  public OperateElevator(ElevatorUtil elevator) {
+  public OperateElevator(ElevatorUtil elevator, Constants.ElevatorAngle angle) {
     // Use addRequirements() here to declare subsystem dependencies.
     m_elevator = elevator;
+    this.angle = angle;
     addRequirements(m_elevator);
   }
 
@@ -24,7 +28,9 @@ public class OperateElevator extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    m_elevator.setElevatorAngle(this.angle);
+  }
 
   // Called once the command ends or is interrupted.
   @Override

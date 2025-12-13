@@ -7,40 +7,59 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 
-import edu.wpi.first.wpilibj.CAN;
-import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
 import frc.robot.Constants;
 
 public class ElevatorUtil extends SubsystemBase {
   /** Creates a new ElevatorUtil. */
 
   private TalonSRX elevator;
-  private String direction;
+  private Constants.ElevatorAngle angle;
   
-  public ElevatorUtil() {
+  public ElevatorUtil(Constants.ElevatorAngle angle) {
     elevator = new TalonSRX(Constants.ELEVATOR);
+    this.angle = angle;
   }
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
-    SmartDashboard.putString("Direction :: ", direction);
+
+  }
+
+  public void setElevatorAngle(Constants.ElevatorAngle angle){
+    this.angle = angle;
+    switch (this.angle){
+      case UP :
+        elevatorUp();
+        break;
+      case DOWN:
+        elevatorDown();
+        break;
+      case STOP:
+        elevatorStop();
+        break;
+      default:
+        elevatorStop();
+    }
+    updateDashboard();
   }
 
   public void elevatorUp() {
-    elevator.set(TalonSRXControlMode.PercentOutput, Constants.SPEED_UP);
-    direction = "Up";
+    elevator.set(TalonSRXControlMode.PercentOutput, Constants.ANGLE_UP);
   }
 
   public void elevatorDown() {
-    elevator.set(TalonSRXControlMode.PercentOutput, Constants.SPEED_DOWN);
-    direction = "Down";
+    elevator.set(TalonSRXControlMode.PercentOutput, Constants.ANGLE_DOWN);
   }
 
   public void elevatorStop() {
-    elevator.set(TalonSRXControlMode.PercentOutput, Constants.ELEVATOR_STOP);
-    direction = "Stop";
+    elevator.set(TalonSRXControlMode.PercentOutput, Constants.ANGLE_STOP);
+ }
+
+  private void updateDashboard(){
+    // This method will be called once per scheduler run
+    SmartDashboard.putString("Elevator Angle :: ", this.angle.toString());
   }
 }
