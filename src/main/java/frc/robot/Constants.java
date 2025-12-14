@@ -62,6 +62,8 @@ public class Constants {
     /*
      * Cannon Constants
      */
+    public static final int SHOT_ENCODER_CHANNEL_A = 0;
+    public static final int SHOT_ENCODER_CHANNEL_B = 1;
     public static final double WAIT_SHORT = 0.5;
     public static final double WAIT_LONG = 1.0;
     public static final double CANNON_SHOOT = 1.0;

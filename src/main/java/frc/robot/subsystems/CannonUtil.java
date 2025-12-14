@@ -23,7 +23,7 @@ public class CannonUtil extends SubsystemBase {
   public CannonUtil(Constants.CannonState state) {
     this.state = state;
     this.isLoaded = false;
-    encoder = new Encoder(0,1);
+    encoder = new Encoder(Constants.SHOT_ENCODER_CHANNEL_A, Constants.SHOT_ENCODER_CHANNEL_B);
     shooter = new TalonSRX(Constants.SHOOTER);    // changed names
     loader = new TalonSRX(Constants.LOADER);
   }
